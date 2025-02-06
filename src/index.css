@@ -5,7 +5,12 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    background-image: url('../public/image/README.png');
-    background-size: cover;
+    height: 300vh;
+    background-color: #d9c3b2;
+    background-image: url('../public/image/READMEall.png');
+    background-size: contain;
+    background-position-y: 580px;
     background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    font-family: "Poppins", serif;
 }

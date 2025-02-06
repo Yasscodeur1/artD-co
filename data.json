@@ -1,62 +1,217 @@
-[
+{
+  "articles": [
     {
-      "title": "Work",
-      "color": "hsl(15, 100%, 70%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-work.svg",
-      "timeframes": {
-        "daily": { "current": 5, "previous": 7 },
-        "weekly": { "current": 32, "previous": 36 },
-        "monthly": { "current": 103, "previous": 128 }
-      }
+      "id": 2,
+      "nom":  "lampe",
+      "description": "Une lampe élégante ",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "public/image/alexandru-acea-XbY0xayztVU-unsplash.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
     },
     {
-      "title": "Play",
-      "color": "hsl(195, 74%, 62%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-play.svg",
-      "timeframes": {
-        "daily": { "current": 1, "previous": 2 },
-        "weekly": { "current": 10, "previous": 8 },
-        "monthly": { "current": 23, "previous": 29 }
-      }
+      "id": 3,
+      "nom": "Luminara",
+      "description": "Contemporaine",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "public/image/alex-dudar-IX1pnueqp4s-unsplash.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
     },
     {
-      "title": "Study",
-      "color": "hsl(348, 100%, 68%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-study.svg",
-      "timeframes": {
-        "daily": { "current": 0, "previous": 1 },
-        "weekly": { "current": 4, "previous": 7 },
-        "monthly": { "current": 13, "previous": 19 }
-      }
+      "id": 4,
+      "nom": "Éclat Design",
+      "description": "Ambiance bleu",
+      "prix": 19.99,
+      "quantite": 50,
+      "categorie": "Décoration",
+      "image_url": "public/image/meritt-thomas-eKZDRscZqsc-unsplash (1).jpg",
+      "marque": "MarqueX",
+      "couleur": "Blanc",
+      "taille_disponible": ["S", "M", "L", "XL"]
     },
     {
-      "title": "Exercise",
-      "color": "hsl(145, 58%, 55%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-exercise.svg",
-      "timeframes": {
-        "daily": { "current": 1, "previous": 1 },
-        "weekly": { "current": 4, "previous": 5 },
-        "monthly": { "current": 11, "previous": 18 }
-      }
+      "id": 5,
+      "nom":  "Halo Lux",
+      "description": "Vous cherchez la simplicité",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "public/image/phil-desforges-KP7p0-DRGbg-unsplash.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
     },
     {
-      "title": "Social",
-      "color": "hsl(264, 64%, 52%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-social.svg",
-      "timeframes": {
-        "daily": { "current": 1, "previous": 3 },
-        "weekly": { "current": 5, "previous": 10 },
-        "monthly": { "current": 21, "previous": 23 }
-      }
+      "id": 6,
+      "nom": "Lumisphère",
+      "description": "Multilampe",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "public/image/sam-balye-ZtQt87nvkZM-unsplash.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
     },
     {
-      "title": "Self Care",
-      "color": "hsl(43, 84%, 65%)",
-      "icon": "/time-tracking-dashboard-main/images/icon-self-care.svg",
-      "timeframes": {
-        "daily": { "current": 0, "previous": 1 },
-        "weekly": { "current": 2, "previous": 2 },
-        "monthly": { "current": 7, "previous": 11 }
-      }
+      "id": 7,
+      "nom": "Rayona",
+      "description": "Décore festif",
+      "prix": 19.99,
+      "quantite": 50,
+      "categorie": "Décoration",
+      "image_url": "public/image/etienne-girardet-NGb91VwnOWY-unsplash.jpg",
+      "marque": "MarqueX",
+      "couleur": "Blanc",
+      "taille_disponible": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": 8,
+      "nom":  "Pots 🏺",
+      "description": "Pot bleu et gris design",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "public/image/bleu.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
+    },
+    {
+      "id": 9,
+      "nom": "Terranova",
+      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
+    },
+    {
+      "id": 10,
+      "nom": "Verdura Pot",
+      "description": "T-shirt en coton 100% doux, idéal pour l'été.",
+      "prix": 19.99,
+      "quantite": 50,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/t-shirt-coton.jpg",
+      "marque": "MarqueX",
+      "couleur": "Blanc",
+      "taille_disponible": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": 11,
+      "nom":  "Clay & Co",
+      "description": "Casque sans fil avec réduction de bruit, idéal pour écouter de la musique.",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/casque-bluetooth.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
+    },
+    {
+      "id": 12,
+      "nom": "Potenza",
+      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
+    },
+    {
+      "id": 13,
+      "nom": "Botanicube",
+      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
+    },
+    {
+      "id": 14,
+      "nom": "Peintures 🎨",
+      "description": "T-shirt en coton 100% doux, idéal pour l'été.",
+      "prix": 19.99,
+      "quantite": 50,
+      "categorie":"Décoration",
+      "image_url": "https://exemple.com/images/t-shirt-coton.jpg",
+      "marque": "MarqueX",
+      "couleur": "Blanc",
+      "taille_disponible": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": 15,
+      "nom":  "Coloréa",
+      "description": "Casque sans fil avec réduction de bruit, idéal pour écouter de la musique.",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/casque-bluetooth.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
+    },
+    {
+      "id": 16,
+      "nom": "Pigmenta",
+      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
+    },
+    {
+      "id": 17,
+      "nom": "Nuancé",
+      "description": "T-shirt en coton 100% doux, idéal pour l'été.",
+      "prix": 19.99,
+      "quantite": 50,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/t-shirt-coton.jpg",
+      "marque": "MarqueX",
+      "couleur": "Blanc",
+      "taille_disponible": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": 18,
+      "nom":  "Artéco",
+      "description": "Casque sans fil avec réduction de bruit, idéal pour écouter de la musique.",
+      "prix": 89.99,
+      "quantite": 30,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/casque-bluetooth.jpg",
+      "marque": "AudioTech",
+      "couleur": "Noir",
+      "garantie": "2 ans"
+    },
+    {
+      "id": 19,
+      "nom": "Chromatik",
+      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "prix": 149.99,
+      "quantite": 20,
+      "categorie": "Décoration",
+      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "marque": "CuirCraft",
+      "couleur": "Marron"
     }
   ]
+}
+
+
+
+
