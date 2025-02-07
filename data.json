@@ -178,10 +178,10 @@
       "id": 17,
       "nom": "Nuancé",
       "description": "T-shirt en coton 100% doux, idéal pour l'été.",
-      "prix": 19.99,
+      "prix": 78.99,
       "quantite": 50,
       "categorie": "Décoration",
-      "image_url": "public/image/",
+      "image_url": "public/image/niclas-gustafsson-YAHxe2vDq34-unsplash.jpg",
       "marque": "MarqueX",
       "couleur": "Blanc",
       "taille_disponible": ["S", "M", "L", "XL"]

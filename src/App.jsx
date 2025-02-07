@@ -6,11 +6,11 @@ import Header from './Component/Header'
 import Mains from './Component/Mains'
 import Footer from './Component/Footer'
 
-function App() {
+function App({panier= []}) {
 
   return (
     <>
-      <Header/>
+      <Header panier={panier}/>
       <Mains/>
       <Footer></Footer>
     </>
