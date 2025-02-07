@@ -85,22 +85,22 @@
     {
       "id": 9,
       "nom": "Terranova",
-      "description": "Sac à dos en cuir véritable, parfait pour les voyages ou la vie quotidienne.",
+      "description": "L'escence de l'artisana",
       "prix": 149.99,
       "quantite": 20,
       "categorie": "Décoration",
-      "image_url": "https://exemple.com/images/sac-a-dos-cuir.jpg",
+      "image_url": "public/image/yana-hurska-zeGT9j4ltRA-unsplash.jpg",
       "marque": "CuirCraft",
       "couleur": "Marron"
     },
     {
       "id": 10,
       "nom": "Verdura Pot",
-      "description": "T-shirt en coton 100% doux, idéal pour l'été.",
+      "description": "Wood design",
       "prix": 19.99,
       "quantite": 50,
       "categorie": "Décoration",
-      "image_url": "https://exemple.com/images/t-shirt-coton.jpg",
+      "image_url": "public/image/linh-le-giP0e750Dr8-unsplash.jpg",
       "marque": "MarqueX",
       "couleur": "Blanc",
       "taille_disponible": ["S", "M", "L", "XL"]
@@ -108,11 +108,11 @@
     {
       "id": 11,
       "nom":  "Clay & Co",
-      "description": "Casque sans fil avec réduction de bruit, idéal pour écouter de la musique.",
+      "description": "De l'or qui étincelle.",
       "prix": 89.99,
       "quantite": 30,
       "categorie": "Décoration",
-      "image_url": "https://exemple.com/images/casque-bluetooth.jpg",
+      "image_url": "public/image/HeaderOne 1.jpg",
       "marque": "AudioTech",
       "couleur": "Noir",
       "garantie": "2 ans"
