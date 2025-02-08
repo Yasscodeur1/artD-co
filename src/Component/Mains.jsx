@@ -7,20 +7,39 @@ import Navbar from "./Elements/NavBar"; // Importation de la Navbar
 export default function Mains() {
   const [panier, setPanier] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [solde, setSolde] = useState(false);
+  const [solde, setSolde] = useState(500);
 
   const addToCart = (article) => {
-    setPanier((prev) => {
-      const exist = prev.find((item) => item.id === article.id);
-      if (exist) {
+  setPanier((prev) => {
+    const exist = prev.find((item) => item.id === article.id);
+
+    if (article.quantite <= 0) {
+      alert("Stock épuisé !");
+      return prev;
+    }
+
+    if (exist) {
+      if (exist.quantite < article.quantite) {
         return prev.map((item) =>
           item.id === article.id ? { ...item, quantite: item.quantite + 1 } : item
         );
+      } else {
+        alert("Stock insuffisant !");
+        return prev;
       }
-      return [...prev, { ...article, quantite: 1 }];
-    });
-    setIsOpen(true);
-  };
+    }
+
+    return [...prev, { ...article, quantite: 1 }];
+  });
+
+  // 🔥 Mise à jour du stock dans `Data.articles`
+  const articleIndex = Data.articles.findIndex((art) => art.id === article.id);
+  if (articleIndex !== -1) {
+    Data.articles[articleIndex].quantite -= 1; // Décrémente le stock
+  }
+};
+
+
 
   
   // Fonction pour ouvrir le panier

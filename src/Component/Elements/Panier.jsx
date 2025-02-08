@@ -1,14 +1,36 @@
-import { Trash2 } from "lucide-react"; // Icône de la poubelle
 
-export default function Panier({ panier = [], setPanier, isOpen, setIsOpen }) {
+
+import { Trash2 } from "lucide-react"; // Icône de la poubelle
+import Data from "../../../data.json"; // Importer les données des articles
+import { useState } from "react";
+
+export default function Panier({ panier = [], setPanier, isOpen, setIsOpen, solde, setSolde }) {
+
+  const [articles, setArticles] = useState(Data.articles);
+
+
   // Fonction pour augmenter la quantité
   const incrementer = (id) => {
     setPanier((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantite: item.quantite + 1 } : item
-      )
+      prev.map((item) => {
+        const stockArticle = articles.find((art) => art.id === item.id);
+        if (stockArticle && item.quantite >= stockArticle.quantite) {
+          alert("Stock insuffisant !");
+          return item;
+        }
+        
+        // Mise à jour du stock global
+        setArticles((prevArticles) =>
+          prevArticles.map((art) =>
+            art.id === id ? { ...art, quantite: art.quantite - 1 } : art
+          )
+        );
+  
+        return item.id === id ? { ...item, quantite: item.quantite + 1 } : item;
+      })
     );
   };
+  
 
   // Fonction pour diminuer la quantité
   const decrementer = (id) => {
@@ -37,9 +59,24 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen }) {
 
   // Fonction pour effectuer un paiement
   const payer = () => {
-    alert(`Vous avez payé ${totalPrix} € pour ${totalArticles} article(s).`);
-    // Ici, tu peux ajouter la logique de paiement avec une API ou autre
-    setPanier([]); // On vide le panier après le paiement
+    if (solde < totalPrix) {
+      alert("Solde insuffisant !");
+      return;
+    }
+
+    setSolde((prevSolde) => prevSolde - totalPrix); // Met à jour le solde
+
+    setPanier((prev) => {
+      prev.forEach((item) => {
+        const articleIndex = Data.articles.findIndex((art) => art.id === item.id);
+        if (articleIndex !== -1) {
+          Data.articles[articleIndex].quantite -= item.quantite;
+        }
+      });
+
+      alert(`Paiement réussi ! Nouveau solde : ${solde - totalPrix} €`);
+      return []; // Vider le panier après achat
+    });
   };
 
   return (
@@ -69,9 +106,9 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen }) {
               key={item.id}
               className="flex justify-between items-center bg-[#78614f] p-2 rounded-lg"
             >
-              <img src={item.image} alt={item.title} className="w-12 h-12 rounded-lg" />
+              <img src={item.image_url} alt={item.nom} className="w-12 h-12 rounded-lg" />
               <div className="flex-1 px-2">
-                <h3 className="text-sm font-semibold">{item.title}</h3>
+                <h3 className="text-sm font-semibold">{item.nom}</h3>
                 <p className="text-xs text-gray-200">{item.prix} €</p>
               </div>
               <div className="flex items-center space-x-2">
@@ -102,6 +139,10 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen }) {
         <div className="flex justify-between items-center mb-2">
           <span>Total articles:</span>
           <span>{totalArticles}</span>
+        </div>
+        <div className="flex justify-between items-center mb-2">
+          <span>Solde disponible:</span>
+          {/* <span>{solde.toFixed(2)} €</span> */}
         </div>
         <div className="flex justify-between items-center mb-4">
           <span>Total à payer:</span>

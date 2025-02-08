@@ -1,17 +1,18 @@
-
 import Navbar from "./Elements/NavBar";
 import Image from "../../public/image/sarah-c-back.png";
 import Image2 from "../../public/cadre-image-removebg-preview.png";
 
 import "./header.css";
 
-export default function Header({panier = [] }) {
-  
+export default function Header({ panier = [] }) {
   return (
     <div className="header w-full h-full">
       <Navbar openCart={() => setIsOpen(true)} panier={panier} />
 
-      <div className="w-full mt-16 py-9 mr-10 flex justify-evenly items-center">
+      <div className="w-full lg:h-full mt-16 py-9 mr-10 flex justify-evenly items-center flex-wrap
+            md:flex md:h-300 
+            sm:flex sm:h-300">
+        {/*md:flex space-x-8 py-4 text-lg font-semibold transition-all duration-300*/}
         <div className="w-96 shadow-2xl p-5">
           <h1 className="text-3xl text-[#493b2f] font-bold">
             Transformez Votre Espace, Élevez Votre Style
@@ -28,11 +29,15 @@ export default function Header({panier = [] }) {
           </p>
         </div>
         <img
-          className="relative rounded-2xl h-90 w-105 shadow-inner p-6 bg-gray-200"
+          className="relative rounded-2xl h-90 w-105 shadow-inner p-6 bg-gray-200 "
           src={Image}
           alt=""
         />
-        <img className='absolute top-0 right-30 w-160 h-150' src={Image2} alt="" />
+        {/* <img
+          className="absolute lg:top-0 lg:right-65 w-160 h-150 sm:flex-none"
+          src={Image2}
+          alt=""
+        /> */}
       </div>
     </div>
   );
