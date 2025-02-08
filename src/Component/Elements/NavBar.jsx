@@ -6,6 +6,26 @@ import AuthForm from "./AuthForm"; // Import du formulaire
 export default function Navbar({ openCart, panier }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false); // État pour le formulaire
+  const [cartItems, setCartItems] = useState([]); // Panier
+  const [totalPrice, setTotalPrice] = useState(0); // Prix total du panier
+  const [isCartOpen, setIsCartOpen] = useState(false); // État pour ouvrir/fermer le panier
+
+  // Ajout d'un article au panier
+  const addToCart = (item) => {
+    const updatedCartItems = [...cartItems];
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.title === item.title
+    );
+
+    if (existingItemIndex === -1) {
+      updatedCartItems.push({ ...item, quantity: 1 });
+    } else {
+      updatedCartItems[existingItemIndex].quantity += 1;
+    }
+
+    setCartItems(updatedCartItems);
+    setTotalPrice(updatedCartItems.reduce((total, item) => total + item.prix * item.quantity, 0));
+  };
 
   return (
     <>
@@ -77,6 +97,11 @@ export default function Navbar({ openCart, panier }) {
 
       {/* Formulaire d'authentification */}
       {isAuthOpen && <AuthForm closeForm={() => setIsAuthOpen(false)} />}
+
+      {/* Affichage du panier si isCartOpen est true */}
+      {isCartOpen && (
+        <Cart cartItems={cartItems} setCartItems={setCartItems} totalPrice={totalPrice} closeCart={() => setIsCartOpen(false)} />
+      )}
     </>
   );
 }

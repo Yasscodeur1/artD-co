@@ -1,7 +1,7 @@
-
+import "./Articles.css"
 export default function Articles({ image, title, description, prix, quantite, addToCart, categorie, marque, couleur, garantie }) {
   return (
-    <div className="bg-[#947250] shadow-lg rounded-lg p-4 w-64">
+    <div className="article bg-[#947250] shadow-lg rounded-lg p-4 w-64">
       <img className="w-full h-80 object-cover rounded-t-lg " src={image} alt={title} />
       <div className="p-2">
         <h2 className="text-lg font-bold">{title}</h2>
