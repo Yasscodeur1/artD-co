@@ -11,25 +11,28 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen, sold
 
   // Fonction pour augmenter la quantité
   const incrementer = (id) => {
-    setPanier((prev) =>
-      prev.map((item) => {
-        const stockArticle = articles.find((art) => art.id === item.id);
-        if (stockArticle && item.quantite >= stockArticle.quantite) {
-          alert("Stock insuffisant !");
-          return item;
-        }
-        
-        // Mise à jour du stock global
-        setArticles((prevArticles) =>
-          prevArticles.map((art) =>
-            art.id === id ? { ...art, quantite: art.quantite - 1 } : art
-          )
-        );
+    // Trouver l'article dans le stock global
+    const stockArticle = articles.find((art) => art.id === id);
+    if (!stockArticle || stockArticle.quantite <= 0) {
+      alert("Stock insuffisant !");
+      return;
+    }
   
-        return item.id === id ? { ...item, quantite: item.quantite + 1 } : item;
-      })
+    // Mise à jour du stock global en premier
+    setArticles((prevArticles) =>
+      prevArticles.map((art) =>
+        art.id === id ? { ...art, quantite: art.quantite - 1 } : art
+      )
+    );
+  
+    // Ensuite, mise à jour du panier
+    setPanier((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantite: item.quantite + 1 } : item
+      )
     );
   };
+  
   
 
   // Fonction pour diminuer la quantité
@@ -81,12 +84,12 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen, sold
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full w-80 bg-[#5e4935] text-white shadow-lg transition-transform transform ${
+      className={`fixed top-0 right-0 h-full pb-16 w-80 bg-[#5e4935] text-white shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       {/* Header du panier */}
-      <div className="p-4 border-b border-gray-300 flex justify-between items-center">
+      <div className="mt-14 p-4 border-b border-gray-300 flex justify-between items-center">
         <h2 className="text-lg font-bold">🛒 Panier ({totalArticles})</h2>
         <button
           className="text-lg font-bold text-white"
@@ -113,14 +116,14 @@ export default function Panier({ panier = [], setPanier, isOpen, setIsOpen, sold
               </div>
               <div className="flex items-center space-x-2">
                 <button
-                  className="bg-[#E6C28B] text-black px-2 rounded-md"
+                  className="bg-[#E6C28B] text-black px-2 rounded-sm"
                   onClick={() => decrementer(item.id)}
                 >
                   ➖
                 </button>
                 <span className="text-lg">{item.quantite}</span>
                 <button
-                  className="bg-[#E6C28B] text-black px-2 rounded-md"
+                  className="bg-[#E6C28B] text-black px-2 rounded-sm"
                   onClick={() => incrementer(item.id)}
                 >
                   ➕
