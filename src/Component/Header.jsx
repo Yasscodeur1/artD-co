@@ -1,6 +1,6 @@
 import Navbar from "./Elements/NavBar";
 import Image from "../../public/image/sarah-c-back.png";
-import Image2 from "../../public/cadre-image-removebg-preview.png";
+import Image2 from "../../public/headerFond.png";
 
 import "./header.css";
 
@@ -29,15 +29,15 @@ export default function Header({ panier = [] }) {
           </p>
         </div>
         <img
-          className="relative rounded-2xl h-90 w-105 shadow-inner p-6 bg-gray-200 "
+          className="rounded-full h-90 w-105 shadow-2xl shadow-[#f5d9b0] p-6  "
           src={Image}
           alt=""
         />
-        {/* <img
-          className="absolute lg:top-0 lg:right-65 w-160 h-150 sm:flex-none"
+        <img
+          className="absolute lg:bottom-10 lg:left-83 xl:left-158 w-210 h-130 hidden lg:block"
           src={Image2}
-          alt=""
-        /> */}
+          alt="image"
+        />
       </div>
     </div>
   );

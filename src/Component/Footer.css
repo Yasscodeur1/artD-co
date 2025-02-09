@@ -1,0 +1,14 @@
+.foot{
+    /* background-image: url('../../../public/image/Capture d’écran 2025-02-09 à 00.33.26.png'); */
+    background-image: url('../../../public/image/Capture\ d’écran\ 2025-02-09\ à\ 00.33.26.png');
+    background-size: cover;
+    background-position-y: -50Px;
+    text-align: center;
+    padding: .5em;
+}
+.foot::after{
+    content: '© by Bastos and Yasscodeur - first project e-shop';
+    color: rgb(132, 120, 120);
+    font-size: small;
+    
+} 
