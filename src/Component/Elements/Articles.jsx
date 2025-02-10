@@ -7,7 +7,7 @@ export default function Articles({ image, title, description, prix, quantite, ad
         <h2 className="text-lg font-bold">{title}</h2>
         <p className="text-sm text-gray-50">{description}</p>
         <p className="text-md font-semibold text-white mt-2">{prix} €</p>
-        <p className="text-sm text-gray-400">Stock : {quantite}</p>
+        {/* <p className="text-sm text-gray-400">Stock : {quantite}</p> */}
         <p className="text-sm text-[#E6C28B] pt-3">Catégorie : {categorie}</p>
         {/* {marque && <p className="text-sm text-gray-400">Marque : {marque}</p>}
         {couleur && <p className="text-sm text-gray-400">Couleur : {couleur}</p>}
